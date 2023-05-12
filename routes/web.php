@@ -15,8 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('login', 'MainController@index')->name('login');
-Route::post('/main/checklogin', 'MainController@checklogin');
-Route::get('main/successlogin', 'MainController@successlogin')->middleware('auth');
-Route::get('main/logout', 'MainController@logout');
-Route::post('/main/project2login', 'MainController@userLoginProjectTwo')->middleware('auth');
+Route::get('login', 'AuthController@index')->name('login');
+Route::post('login', 'AuthController@login');
+Route::post('logout', 'AuthController@logout');
+
+
+Route::get('dashboard', 'AuthController@dashboard')->name('dashboard')->middleware('auth');

@@ -28,7 +28,7 @@
      <br>
      <select name="apps" id="apps">
         <option value="">Please Select</option>
-        <option value="1">Project 1</option>
+        <option value="2">Project 2</option>
      </select>
     </div>
    @else
@@ -44,14 +44,9 @@
         }
     });
     $('#apps').on('click', function(){
-        if($('#apps').val() == 1){
-            $.ajax({
-               type:'POST',
-               url:'/main/project2login',
-               success:function(data) {
-                  $("#msg").html(data.msg);
-               }
-            });
+        if($('#apps').val() == 2){
+            window.location.href = "http://127.0.0.1:8000/dashboard";
+
         }
     })
   </script>

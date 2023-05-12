@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware('api')->get('/get-user', function (Request $request) {
+    // return json_encode(['email'=> 'nasma@iconblox.com']);
+
+    return $user = JWTAuth::parseToken()->authenticate();
+});
